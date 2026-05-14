@@ -1,185 +1,253 @@
-/* ===== RESET ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+export default function PinkSkincareWebsite() {
+  const pages = [
+    "Home",
+    "About",
+    "Products",
+    "Routine",
+    "Reviews",
+    "Blog",
+    "Contact",
+  ];
 
-/* ===== BODY ===== */
-body{
-    font-family: 'Poppins', sans-serif;
-    background:#fffafc;
-    color:#444;
-    line-height:1.6;
-}
+  return (
+    <div className="min-h-screen bg-pink-50 text-pink-900 font-sans">
+      <style>{`
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #fff1f5;
+        }
 
-/* ===== NAVBAR ===== */
-nav{
-    background:white;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:sticky;
-    top:0;
-}
+        .hero-bg {
+          background: linear-gradient(to right, #f9a8d4, #fbcfe8);
+        }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#ff7aa2;
-}
+        .card:hover {
+          transform: translateY(-5px);
+          transition: 0.3s ease;
+        }
+      `}</style>
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
+      <nav className="bg-pink-200 shadow-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-3xl font-bold text-pink-800">GlowBloom Skincare</h1>
+          <ul className="flex gap-6 text-sm font-semibold">
+            {pages.map((page) => (
+              <li key={page}>
+                <a
+                  href={`#${page.toLowerCase()}`}
+                  className="hover:text-pink-600 transition"
+                >
+                  {page}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
-nav a{
-    text-decoration:none;
-    color:#555;
-    font-weight:500;
-    transition:0.3s;
-}
+      {/* HOME PAGE */}
+      <section
+        id="home"
+        className="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-6"
+      >
+        <h2 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          Your Skin Deserves to Glow
+        </h2>
+        <p className="max-w-2xl text-white text-xl mb-8">
+          Discover soft, radiant, healthy skin with our pink-inspired skincare collection.
+        </p>
+        <button className="bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition">
+          Shop Now
+        </button>
+      </section>
 
-nav a:hover{
-    color:#ff7aa2;
-}
+      {/* ABOUT PAGE */}
+      <section id="about" className="min-h-screen flex items-center px-10 py-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <img
+            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
+            alt="Skincare"
+            className="rounded-3xl shadow-2xl"
+          />
 
-/* ===== HERO SECTION ===== */
-.hero{
-    height:90vh;
-    background:linear-gradient(rgba(255,255,255,0.4),
-    rgba(255,255,255,0.4)),
-    url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
+          <div>
+            <h2 className="text-5xl font-bold mb-6 text-pink-700">About Us</h2>
+            <p className="text-lg leading-8">
+              GlowBloom Skincare was created to make skincare fun, gentle, and effective.
+              We focus on hydrating ingredients, clean formulas, and confidence-building
+              products that leave your skin glowing every day.
+            </p>
+          </div>
+        </div>
+      </section>
 
-.hero-text{
-    background:rgba(255,255,255,0.75);
-    padding:40px;
-    border-radius:25px;
-    max-width:700px;
-}
+      {/* PRODUCTS PAGE */}
+      <section id="products" className="min-h-screen bg-pink-100 px-8 py-20">
+        <h2 className="text-5xl font-bold text-center text-pink-700 mb-14">
+          Featured Products
+        </h2>
 
-.hero h1{
-    font-size:60px;
-    color:#ff5c8a;
-    margin-bottom:15px;
-}
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[
+            {
+              title: "Rose Cleanser",
+              price: "$18",
+              image:
+                "https://images.unsplash.com/photo-1556228578-ddf1b5c6d3b3?q=80&w=1200&auto=format&fit=crop",
+            },
+            {
+              title: "Pink Glow Serum",
+              price: "$24",
+              image:
+                "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop",
+            },
+            {
+              title: "Hydration Cream",
+              price: "$30",
+              image:
+                "https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1200&auto=format&fit=crop",
+            },
+          ].map((product) => (
+            <div
+              key={product.title}
+              className="card bg-white rounded-3xl shadow-xl overflow-hidden"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="h-72 w-full object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2">{product.title}</h3>
+                <p className="text-pink-600 font-semibold mb-4">{product.price}</p>
+                <button className="bg-pink-500 text-white px-5 py-3 rounded-full hover:bg-pink-600 transition">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-.hero p{
-    font-size:20px;
-    margin-bottom:25px;
-}
+      {/* ROUTINE PAGE */}
+      <section id="routine" className="min-h-screen px-8 py-20 flex items-center">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-5xl font-bold text-pink-700 mb-12">
+            Daily Skincare Routine
+          </h2>
 
-/* ===== BUTTON ===== */
-.btn{
-    display:inline-block;
-    padding:14px 30px;
-    background:#ff7aa2;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
-}
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              "Cleanse",
+              "Tone",
+              "Apply Serum",
+              "Moisturize",
+            ].map((step, index) => (
+              <div
+                key={step}
+                className="bg-white rounded-3xl shadow-lg p-8"
+              >
+                <div className="text-5xl font-bold text-pink-300 mb-4">
+                  {index + 1}
+                </div>
+                <h3 className="text-2xl font-bold">{step}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-.btn:hover{
-    background:#ff5c8a;
-    transform:translateY(-3px);
-}
+      {/* REVIEWS PAGE */}
+      <section id="reviews" className="min-h-screen bg-pink-100 px-8 py-20">
+        <h2 className="text-5xl font-bold text-center text-pink-700 mb-14">
+          Customer Reviews
+        </h2>
 
-/* ===== SECTION ===== */
-.section{
-    padding:80px 10%;
-}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            "My skin has never looked this glowy before!",
+            "The serum is lightweight and smells amazing.",
+            "I love the pink packaging and soft formulas.",
+          ].map((review, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-xl p-8"
+            >
+              <p className="text-lg italic mb-6">“{review}”</p>
+              <h4 className="font-bold text-pink-600">★★★★★</h4>
+            </div>
+          ))}
+        </div>
+      </section>
 
-.section-title{
-    text-align:center;
-    font-size:40px;
-    color:#ff5c8a;
-    margin-bottom:50px;
-}
+      {/* BLOG PAGE */}
+      <section id="blog" className="min-h-screen px-8 py-20">
+        <h2 className="text-5xl font-bold text-center text-pink-700 mb-14">
+          Beauty Blog
+        </h2>
 
-/* ===== CARDS ===== */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          {[
+            {
+              title: "5 Tips for Glowing Skin",
+              desc: "Learn how hydration and consistency can improve your skincare routine.",
+            },
+            {
+              title: "Why SPF Matters",
+              desc: "Protecting your skin daily helps prevent damage and keeps your glow healthy.",
+            },
+          ].map((blog) => (
+            <div
+              key={blog.title}
+              className="bg-white rounded-3xl shadow-xl p-10"
+            >
+              <h3 className="text-3xl font-bold mb-4">{blog.title}</h3>
+              <p className="text-lg leading-7">{blog.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
+      {/* CONTACT PAGE */}
+      <section
+        id="contact"
+        className="min-h-screen bg-pink-200 flex items-center justify-center px-6"
+      >
+        <div className="bg-white shadow-2xl rounded-3xl p-10 max-w-2xl w-full">
+          <h2 className="text-5xl font-bold text-pink-700 mb-8 text-center">
+            Contact Us
+          </h2>
 
-.card:hover{
-    transform:translateY(-8px);
-}
+          <form className="space-y-6">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full border-2 border-pink-200 rounded-xl p-4 focus:outline-none focus:border-pink-400"
+            />
 
-.card img{
-    width:100%;
-    border-radius:15px;
-    margin-bottom:20px;
-}
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full border-2 border-pink-200 rounded-xl p-4 focus:outline-none focus:border-pink-400"
+            />
 
-.card h3{
-    color:#ff5c8a;
-    margin-bottom:10px;
-}
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              className="w-full border-2 border-pink-200 rounded-xl p-4 focus:outline-none focus:border-pink-400"
+            ></textarea>
 
-/* ===== TIPS SECTION ===== */
-.tips{
-    background:#ffeaf1;
-    border-radius:25px;
-    padding:40px;
-}
+            <button className="w-full bg-pink-500 text-white py-4 rounded-xl font-bold hover:bg-pink-600 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
 
-.tips ul{
-    margin-top:20px;
-    padding-left:20px;
-}
-
-.tips li{
-    margin-bottom:15px;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:#ff7aa2;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
+      <footer className="bg-pink-300 text-center py-6 text-pink-900 font-semibold">
+        © 2026 GlowBloom Skincare — All Rights Reserved
+      </footer>
+    </div>
+  );
 }
