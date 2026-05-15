@@ -1,103 +1,289 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Skincare</title>
+export default function AestheticWebsite() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-rose-50 to-purple-100 text-gray-800 font-sans">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full backdrop-blur-lg bg-white/40 shadow-md z-50">
+        <div className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+          <h1 className="text-3xl font-bold tracking-wide text-pink-600">
+            LunaSkin
+          </h1>
 
-    <link rel="stylesheet" href="style.css">
+          <ul className="hidden md:flex gap-10 text-lg font-medium">
+            <li><a href="#home" className="hover:text-pink-500 transition duration-300 cursor-pointer">Home</a></li>
+            <li><a href="#about" className="hover:text-pink-500 transition duration-300 cursor-pointer">About</a></li>
+            <li><a href="#services" className="hover:text-pink-500 transition duration-300 cursor-pointer">Services</a></li>
+            <li><a href="#gallery" className="hover:text-pink-500 transition duration-300 cursor-pointer">Gallery</a></li>
+            <li><a href="#contact" className="hover:text-pink-500 transition duration-300 cursor-pointer">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
+      {/* Hero Section */}
+      <section id="home" className="pt-40 pb-32 px-8">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-6xl md:text-7xl font-extrabold leading-tight text-pink-700">
+              Healthy.
+              <br />
+              Glowing.
+              <br />
+              Skincare.
+            </h2>
 
-<body>
-
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">GlowSkin</div>
-
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Routine</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Tips</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Healthy Skin Starts Here</h1>
-
-            <p>
-                Discover skincare routines, glowing skin tips,
-                and the best products for every skin type.
+            <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-xl">
+              Discover luxurious skincare products designed to hydrate, nourish, and transform your skin with a radiant natural glow. Explore modern beauty routines and aesthetic skincare essentials.
             </p>
 
-            <a href="#" class="btn">Explore More</a>
+            <div className="mt-10 flex gap-5">
+              <button className="px-8 py-4 rounded-2xl bg-pink-500 text-white text-lg font-semibold shadow-lg hover:scale-105 transition duration-300">
+                Shop Collection
+              </button>
+
+              <button className="px-8 py-4 rounded-2xl border-2 border-pink-400 text-pink-600 text-lg font-semibold hover:bg-pink-100 transition duration-300">
+                Skincare Tips
+              </button>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 bg-pink-300 blur-3xl opacity-30 rounded-full"></div>
+
+            <img
+              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop"
+              alt="Aesthetic"
+              className="relative rounded-[40px] shadow-2xl object-cover h-[600px] w-full"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- PRODUCTS -->
-    <section class="section">
-        <h2 class="section-title">Popular Products</h2>
+      {/* About Section */}
+      <section id="about" className="py-28 px-8 bg-white/60 backdrop-blur-lg">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-5xl font-bold text-pink-600 mb-10">
+            About LunaSkin
+          </h3>
 
-        <div class="cards">
+          <p className="text-xl leading-loose text-gray-700 max-w-4xl mx-auto">
+            LunaSkin is a modern skincare brand focused on confidence, self-care, and glowing skin. Our products are crafted with nourishing ingredients and designed to create a luxurious beauty experience for every customer.
+          </p>
+        </div>
+      </section>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556228578-dd6c7f1d7b1b" alt="Cleanser">
+      {/* Cards Section */}
+      <section id="services" className="py-32 px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h3 className="text-5xl font-bold text-pink-700">
+              Skincare Essentials
+            </h3>
+            <p className="mt-6 text-lg text-gray-600">
+              Premium skincare designed for healthy and radiant skin.
+            </p>
+          </div>
 
-                <h3>Gentle Cleanser</h3>
-
-                <p>
-                    Removes dirt and oil while keeping
-                    your skin soft and hydrated.
-                </p>
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-white/70 backdrop-blur-xl p-10 rounded-[35px] shadow-xl hover:-translate-y-3 transition duration-500">
+              <div className="w-20 h-20 rounded-full bg-pink-200 flex items-center justify-center text-4xl mb-8">
+                ✨
+              </div>
+              <h4 className="text-3xl font-bold text-pink-600 mb-5">
+                Hydrating Creams
+              </h4>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Deeply moisturizing creams that leave your skin soft, smooth, and glowing throughout the day.
+              </p>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be" alt="Serum">
-
-                <h3>Vitamin C Serum</h3>
-
-                <p>
-                    Brightens skin and helps create
-                    a natural glowing look.
-                </p>
+            <div className="bg-white/70 backdrop-blur-xl p-10 rounded-[35px] shadow-xl hover:-translate-y-3 transition duration-500">
+              <div className="w-20 h-20 rounded-full bg-purple-200 flex items-center justify-center text-4xl mb-8">
+                💻
+              </div>
+              <h4 className="text-3xl font-bold text-purple-600 mb-5">
+                Facial Cleansers
+              </h4>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Gentle cleansers that refresh your skin while removing impurities and maintaining hydration.
+              </p>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a" alt="Moisturizer">
+            <div className="bg-white/70 backdrop-blur-xl p-10 rounded-[35px] shadow-xl hover:-translate-y-3 transition duration-500">
+              <div className="w-20 h-20 rounded-full bg-rose-200 flex items-center justify-center text-4xl mb-8">
+                🎨
+              </div>
+              <h4 className="text-3xl font-bold text-rose-600 mb-5">
+                Glow Serums
+              </h4>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Vitamin-rich serums designed to brighten your complexion and enhance your natural beauty.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <h3>Moisturizer</h3>
+      {/* Gallery Section */}
+      <section id="gallery" className="py-32 px-8 bg-white/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h3 className="text-5xl font-bold text-pink-700">
+              Skincare Collection
+            </h3>
+            <p className="mt-5 text-lg text-gray-600">
+              Explore our favorite skincare products and beauty inspiration.
+            </p>
+          </div>
 
-                <p>
-                    Locks in hydration and keeps
-                    skin healthy all day long.
-                </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <img
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+              className="rounded-[30px] h-[400px] object-cover shadow-xl hover:scale-105 transition duration-500"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop"
+              className="rounded-[30px] h-[400px] object-cover shadow-xl hover:scale-105 transition duration-500"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop"
+              className="rounded-[30px] h-[400px] object-cover shadow-xl hover:scale-105 transition duration-500"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-32 px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h3 className="text-5xl font-bold text-pink-700 mb-20">
+            Customer Reviews
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-white/70 p-10 rounded-[35px] shadow-xl">
+              <p className="text-lg leading-relaxed text-gray-600">
+                ““My skin has never felt this soft and hydrated. LunaSkin products completely changed my skincare routine.””
+              </p>
+
+              <h4 className="mt-8 text-2xl font-bold text-pink-600">
+                Sophia
+              </h4>
             </div>
 
+            <div className="bg-white/70 p-10 rounded-[35px] shadow-xl">
+              <p className="text-lg leading-relaxed text-gray-600">
+                ““The glow serum gave my skin such a healthy shine after only a few uses. I’m obsessed with these products.””
+              </p>
+
+              <h4 className="mt-8 text-2xl font-bold text-purple-600">
+                Olivia
+              </h4>
+            </div>
+
+            <div className="bg-white/70 p-10 rounded-[35px] shadow-xl">
+              <p className="text-lg leading-relaxed text-gray-600">
+                ““The packaging, quality, and results are amazing. My skincare routine feels so much more luxurious now.””
+              </p>
+
+              <h4 className="mt-8 text-2xl font-bold text-rose-600">
+                Amelia
+              </h4>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- TIPS -->
-    <section class="section">
-        <div class="tips">
-            <h2 class="section-title">Skincare Tips</h2>
+      {/* Newsletter */}
+      <section className="py-32 px-8 bg-gradient-to-r from-pink-400 to-purple-400 text-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h3 className="text-5xl font-bold mb-8">
+            Join Our Beauty Community
+          </h3>
 
-            <ul>
-                <li>Drink plenty of water every day.</li>
-                <li>Always wear sunscreen outside.</li>
-                <li>Wash your face before sleeping.</li>
-                <li>Use products that match your skin type.</li>
-            </ul>
+          <p className="text-xl leading-relaxed max-w-3xl mx-auto">
+            Subscribe for skincare tips, beauty routines, exclusive product launches, and glowing skin inspiration.
+          </p>
+
+          <div className="mt-12 flex flex-col md:flex-row gap-5 justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-6 py-5 rounded-2xl w-full md:w-[450px] text-gray-800 text-lg outline-none"
+            />
+
+            <button className="px-10 py-5 rounded-2xl bg-white text-pink-600 text-lg font-bold hover:scale-105 transition duration-300">
+              Subscribe
+            </button>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 GlowSkin | Skincare & Beauty</p>
-    </footer>
+      {/* Contact Section */}
+      <section id="contact" className="py-32 px-8 bg-white/60">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+          <div>
+            <h3 className="text-5xl font-bold text-pink-700 mb-8">
+              Get In Touch
+            </h3>
 
-</body>
-</html>
+            <p className="text-lg leading-relaxed text-gray-600 mb-10">
+              Need help choosing the perfect skincare products? Reach out to our beauty team anytime.
+            </p>
+
+            <div className="space-y-6 text-lg">
+              <p>📧 hello@lunaskin.com</p>
+              <p>📍 Amsterdam, Netherlands</p>
+              <p>📱 +31 000 000 000</p>
+            </div>
+          </div>
+
+          <div className="bg-white/80 p-10 rounded-[35px] shadow-2xl">
+            <div className="space-y-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-6 py-5 rounded-2xl border border-pink-200 outline-none focus:ring-2 focus:ring-pink-300"
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-6 py-5 rounded-2xl border border-pink-200 outline-none focus:ring-2 focus:ring-pink-300"
+              />
+
+              <textarea
+                rows="5"
+                placeholder="Your Message"
+                className="w-full px-6 py-5 rounded-2xl border border-pink-200 outline-none focus:ring-2 focus:ring-pink-300"
+              ></textarea>
+
+              <button className="w-full py-5 rounded-2xl bg-pink-500 text-white text-lg font-semibold hover:bg-pink-600 transition duration-300">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 px-8 bg-pink-600 text-white text-center">
+        <h4 className="text-3xl font-bold mb-4">LunaSkin</h4>
+
+        <p className="text-lg opacity-90">
+          Luxury skincare for glowing, healthy skin every day.
+        </p>
+
+        <div className="mt-6 flex justify-center gap-6 text-2xl">
+          <span className="hover:scale-110 transition duration-300 cursor-pointer">🌸</span>
+          <span className="hover:scale-110 transition duration-300 cursor-pointer">✨</span>
+          <span className="hover:scale-110 transition duration-300 cursor-pointer">💖</span>
+        </div>
+
+        <p className="mt-8 opacity-70">
+          © 2026 LunaSkin. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  );
+}
